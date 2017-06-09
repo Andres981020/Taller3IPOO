@@ -6,8 +6,8 @@
 class EmpleadoOperativo: public Empleado{
 
 private:
-
     QString zonaTrabajo;
+
 
 public:
     EmpleadoOperativo(QString cedula, QString nombre, double salario, QString zona);
@@ -16,7 +16,6 @@ public:
 
     QString getZonaTrabajo();
     void setZonaTrabajo(QString zona);
-
 
 };
 

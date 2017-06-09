@@ -1,25 +1,19 @@
-#include "Interfaz.h"
-#include "ui_Interfaz.h"
-#include "Empleado.h"
-#include"Empleadooficina.h"
-#include"Empleadooperativo.h"
-//#include <fstream>
-#include <QFileDialog>
-#include <QFileInfo>
+#include "Ventana.h"
+#include "ui_ventana.h"
 
-Interfaz::Interfaz(QWidget *parent) :
+Ventana::Ventana(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::Interfaz)
+    ui(new Ui::Ventana)
 {
     ui->setupUi(this);
 }
 
-Interfaz::~Interfaz()
+Ventana::~Ventana()
 {
     delete ui;
 }
 
-void Interfaz::on_Ingresar_clicked()
+void Ventana::on_Ingresar_clicked()
 {
     QString clase = ui->claseEmpleado->currentText();
 
@@ -64,7 +58,7 @@ void Interfaz::on_Ingresar_clicked()
 }
 
 
-void Interfaz::on_Consultar_clicked(){
+void Ventana::on_Consultar_clicked(){
 
     QString clase = ui->claseEmpleado->currentText();
     QString consulta = ui->Consulta->text();
@@ -105,7 +99,7 @@ void Interfaz::on_Consultar_clicked(){
 
 }
 
-void Interfaz::on_Total_clicked(){
+void Ventana::on_Total_clicked(){
 
      // QString clase = ui->claseEmpleado->currentText();
      double total=0.0;
@@ -129,7 +123,7 @@ void Interfaz::on_Total_clicked(){
 
 
 
-void Interfaz::on_Promedio_clicked(){
+void Ventana::on_Promedio_clicked(){
 
     QString file;
     QString clase = ui->claseEmpleado->currentText();
@@ -149,7 +143,7 @@ void Interfaz::on_Promedio_clicked(){
     }
 }
 
-void Interfaz::on_Limpiar_clicked()
+void Ventana::on_Limpiar_clicked()
 {
 
     ui->Salida1->clear();
@@ -157,7 +151,7 @@ void Interfaz::on_Limpiar_clicked()
     ui->Salida3->clear();
 }
 
-void Interfaz::on_Consultar2_clicked(){
+/*void Interfaz::on_Consultar2_clicked(){
 
     QString clase = ui->claseEmpleado->currentText();
     QString consulta = ui->Consulta->text();
@@ -196,29 +190,10 @@ void Interfaz::on_Consultar2_clicked(){
         ui->Salida1->setText(salida);
     }
 
-}
+}*/
 
-/*bool Interfaz::on_GuardarP_clicked(const QString &fileName){
+void Ventana::on_Salir_clicked(){
 
-    QString fileName = QFileDialog::getSaveFileName(
-                this,
-                "TextEditor - Save as",
-                "/home/luis/Documents",
-                "Text Files (*.txt);;All Files (*.*)");
-    if(!fileName.isEmpty()){
-        curFile = fileName;
-        return saveFile(fileName);
-    }
-    return false;
-
-
+   connect(ui->Salir, SIGNAL(clicked()), this, SLOT(close()));
 
 }
-
-void Interfaz::on_GuardarT_clicked(){
-
-    //saveFile(Salida2); //Salida2("Total Nomina");
-
-}
-*/
-

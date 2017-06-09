@@ -6,7 +6,9 @@
 class EmpleadoOficina: public Empleado{
 
 private:
-        int numEmpleado;
+     int numEmpleado;
+
+
 public:
     EmpleadoOficina(QString cedula, QString nombre, double salario, int numEmpleado);
     ~EmpleadoOficina();

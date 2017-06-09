@@ -1,10 +1,10 @@
-#include "Interfaz.h"
+#include "Ventana.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Interfaz w;
+    Ventana w;
     w.show();
 
     return a.exec();

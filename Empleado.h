@@ -5,11 +5,11 @@
 
 class Empleado{
 
-
 private:
-    QString cedula;
-    QString nombre;
-    double salario;
+
+        QString cedula;
+        QString nombre;
+        double salario;
 
 
 public:
@@ -21,8 +21,9 @@ public:
     void setCedula(QString cedula);
     void setNombre(QString nombre);
     void setSalario(double salario);
-
-
 };
 
 #endif // EMPLEADO_H
+
+#include<QString>
+

@@ -1,6 +1,7 @@
-#include "Empleadooficina.h"
+#include "EmpleadoOficina.h"
 
 EmpleadoOficina::EmpleadoOficina(QString cedula, QString nombre, double salario, int numEmpleado): Empleado(cedula, nombre, salario){
+
 
     this->numEmpleado = numEmpleado;
 
